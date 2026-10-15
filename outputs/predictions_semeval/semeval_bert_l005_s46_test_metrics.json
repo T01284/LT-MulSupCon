@@ -1,0 +1,29 @@
+{
+  "test_metrics": {
+    "micro_f1": 0.6993848257006152,
+    "macro_f1": 0.5512778630205447,
+    "micro_precision": 0.756692796923532,
+    "micro_recall": 0.6501461430931503,
+    "macro_precision": 0.6586531465892875,
+    "macro_recall": 0.5071387245519013,
+    "mAP": 0.6266536524593064,
+    "head": 0.7866309265712838,
+    "medium": 0.7197819757607208,
+    "tail": 0.3089635572459957
+  },
+  "per_class_f1": {
+    "anger": 0.7737642585551331,
+    "anticipation": 0.216696269982238,
+    "disgust": 0.7435424354243543,
+    "fear": 0.7296996662958843,
+    "joy": 0.842586085734364,
+    "love": 0.5896076352067868,
+    "optimism": 0.7348517404383326,
+    "pessimism": 0.3688969258589512,
+    "sadness": 0.6947945205479452,
+    "surprise": 0.26905829596412556,
+    "trust": 0.1005586592178771
+  },
+  "checkpoint": "outputs/checkpoints_semeval/semeval_bert_l005_s46/best_model.pt",
+  "split": "test"
+}

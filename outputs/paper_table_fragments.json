@@ -1,0 +1,807 @@
+{
+  "source": "outputs/key_results.json (five-seed test means) + experiment_summary.json (dev grid)",
+  "hardware": "NVIDIA RTX PRO 6000 Blackwell Server Edition 96GB, torch 2.8.0+cu128",
+  "generated_from": "outputs/key_results.json",
+  "protocol_notes": {
+    "test_metrics": "mean \u00b1 SD over seeds 42\u201346 on GoEmotions official test split",
+    "dev_lambda_grid": "development Macro-F1 from experiment_summary history; peaks at \u03bb\u2081=0.02 and 0.05 (0.514 each on RTX PRO 6000 re-run)",
+    "isolation_lambda": "0.10, locked from the initial three-point dev scan {0.10, 0.15, 0.20} before drop-one testing; 0.02 and 0.05 were added to the dev grid afterwards, so contrasts at other weights are post-hoc sensitivity checks",
+    "cb_focal_minus_bce_macro_delta_mean": 0.009
+  },
+  "five_seed_test_means": {
+    "baseline": {
+      "macro_f1": {
+        "mean": 0.501,
+        "std": 0.004,
+        "ci95": [
+          0.4958,
+          0.5053
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.421,
+        "std": 0.012,
+        "ci95": [
+          0.406,
+          0.4365
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.595,
+        "std": 0.002,
+        "ci95": [
+          0.5927,
+          0.5978
+        ],
+        "n": 5
+      }
+    },
+    "baseline_focal": {
+      "macro_f1": {
+        "mean": 0.51,
+        "std": 0.007,
+        "ci95": [
+          0.5015,
+          0.5177
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.484,
+        "std": 0.009,
+        "ci95": [
+          0.4732,
+          0.4958
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.578,
+        "std": 0.006,
+        "ci95": [
+          0.5699,
+          0.5856
+        ],
+        "n": 5
+      }
+    },
+    "hard_supcon": {
+      "macro_f1": {
+        "mean": 0.437,
+        "std": 0.009,
+        "ci95": [
+          0.4258,
+          0.4476
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.289,
+        "std": 0.014,
+        "ci95": [
+          0.2718,
+          0.3068
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.585,
+        "std": 0.006,
+        "ci95": [
+          0.5785,
+          0.5923
+        ],
+        "n": 5
+      }
+    },
+    "hard_supcon_focal": {
+      "macro_f1": {
+        "mean": 0.468,
+        "std": 0.013,
+        "ci95": [
+          0.453,
+          0.484
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.451,
+        "std": 0.02,
+        "ci95": [
+          0.426,
+          0.4764
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.571,
+        "std": 0.003,
+        "ci95": [
+          0.5678,
+          0.575
+        ],
+        "n": 5
+      }
+    },
+    "bert_bce": {
+      "macro_f1": {
+        "mean": 0.485,
+        "std": 0.004,
+        "ci95": [
+          0.4805,
+          0.4905
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.389,
+        "std": 0.014,
+        "ci95": [
+          0.3726,
+          0.4063
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.591,
+        "std": 0.002,
+        "ci95": [
+          0.5881,
+          0.5934
+        ],
+        "n": 5
+      }
+    },
+    "clfer_lt_l002": {
+      "macro_f1": {
+        "mean": 0.519,
+        "std": 0.004,
+        "ci95": [
+          0.5131,
+          0.5241
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.502,
+        "std": 0.006,
+        "ci95": [
+          0.4952,
+          0.5089
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.587,
+        "std": 0.006,
+        "ci95": [
+          0.5798,
+          0.5937
+        ],
+        "n": 5
+      }
+    },
+    "clfer_lt_l002_no_queue": {
+      "macro_f1": {
+        "mean": 0.519,
+        "std": 0.009,
+        "ci95": [
+          0.5082,
+          0.5306
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.505,
+        "std": 0.024,
+        "ci95": [
+          0.4756,
+          0.5339
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.587,
+        "std": 0.005,
+        "ci95": [
+          0.581,
+          0.5935
+        ],
+        "n": 5
+      }
+    },
+    "clfer_lt_l002_hard_match": {
+      "macro_f1": {
+        "mean": 0.519,
+        "std": 0.005,
+        "ci95": [
+          0.5127,
+          0.5262
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.501,
+        "std": 0.014,
+        "ci95": [
+          0.4838,
+          0.5175
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.588,
+        "std": 0.005,
+        "ci95": [
+          0.582,
+          0.5934
+        ],
+        "n": 5
+      }
+    },
+    "clfer_lt_l005": {
+      "macro_f1": {
+        "mean": 0.517,
+        "std": 0.005,
+        "ci95": [
+          0.5112,
+          0.5225
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.493,
+        "std": 0.013,
+        "ci95": [
+          0.4765,
+          0.509
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.587,
+        "std": 0.005,
+        "ci95": [
+          0.5802,
+          0.593
+        ],
+        "n": 5
+      }
+    },
+    "clfer_lt_l005_no_queue": {
+      "macro_f1": {
+        "mean": 0.519,
+        "std": 0.007,
+        "ci95": [
+          0.5112,
+          0.5277
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.504,
+        "std": 0.017,
+        "ci95": [
+          0.4828,
+          0.5244
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.587,
+        "std": 0.003,
+        "ci95": [
+          0.5837,
+          0.5909
+        ],
+        "n": 5
+      }
+    },
+    "clfer_lt_l010": {
+      "macro_f1": {
+        "mean": 0.516,
+        "std": 0.008,
+        "ci95": [
+          0.5054,
+          0.5263
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.492,
+        "std": 0.021,
+        "ci95": [
+          0.4659,
+          0.5185
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.587,
+        "std": 0.004,
+        "ci95": [
+          0.5822,
+          0.5923
+        ],
+        "n": 5
+      }
+    },
+    "clfer_lt_l010_no_queue": {
+      "macro_f1": {
+        "mean": 0.502,
+        "std": 0.005,
+        "ci95": [
+          0.4964,
+          0.5078
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.461,
+        "std": 0.012,
+        "ci95": [
+          0.4457,
+          0.4754
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.586,
+        "std": 0.005,
+        "ci95": [
+          0.5797,
+          0.5915
+        ],
+        "n": 5
+      }
+    },
+    "clfer_lt_l010_no_proto": {
+      "macro_f1": {
+        "mean": 0.515,
+        "std": 0.01,
+        "ci95": [
+          0.5021,
+          0.527
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.509,
+        "std": 0.015,
+        "ci95": [
+          0.4898,
+          0.5275
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.578,
+        "std": 0.008,
+        "ci95": [
+          0.5675,
+          0.5877
+        ],
+        "n": 5
+      }
+    },
+    "clfer_lt_l010_hard_match": {
+      "macro_f1": {
+        "mean": 0.515,
+        "std": 0.008,
+        "ci95": [
+          0.5051,
+          0.5243
+        ],
+        "n": 5
+      },
+      "tail": {
+        "mean": 0.486,
+        "std": 0.017,
+        "ci95": [
+          0.4653,
+          0.5069
+        ],
+        "n": 5
+      },
+      "micro_f1": {
+        "mean": 0.587,
+        "std": 0.004,
+        "ci95": [
+          0.5825,
+          0.5923
+        ],
+        "n": 5
+      }
+    }
+  },
+  "dev_lambda_grid": {
+    "0.02": {
+      "model_key": "clfer_lt_l002",
+      "dev_macro_f1": 0.514,
+      "dev_tail_f1": 0.484,
+      "dev_micro_f1": 0.583
+    },
+    "0.05": {
+      "model_key": "clfer_lt_l005",
+      "dev_macro_f1": 0.514,
+      "dev_tail_f1": 0.485,
+      "dev_micro_f1": 0.585
+    },
+    "0.10": {
+      "model_key": "clfer_lt_l010",
+      "dev_macro_f1": 0.51,
+      "dev_tail_f1": 0.473,
+      "dev_micro_f1": 0.583
+    },
+    "0.15": {
+      "model_key": "clfer_lt_l015",
+      "dev_macro_f1": 0.497,
+      "dev_tail_f1": 0.434,
+      "dev_micro_f1": 0.583
+    },
+    "0.20": {
+      "model_key": "clfer_lt_l020",
+      "dev_macro_f1": 0.499,
+      "dev_tail_f1": 0.443,
+      "dev_micro_f1": 0.585
+    },
+    "0.50": {
+      "model_key": "clfer_lt",
+      "dev_macro_f1": 0.485,
+      "dev_tail_f1": 0.419,
+      "dev_micro_f1": 0.582
+    }
+  },
+  "paired_deltas": {
+    "full_minus_no_queue": {
+      "macro_delta": {
+        "mean": 0.014,
+        "std": 0.008,
+        "ci95": [
+          0.0036,
+          0.0239
+        ],
+        "n": 5
+      },
+      "tail_delta": {
+        "mean": 0.032,
+        "std": 0.015,
+        "ci95": [
+          0.0128,
+          0.0505
+        ],
+        "n": 5
+      }
+    },
+    "full_minus_no_proto": {
+      "macro_delta": {
+        "mean": 0.001,
+        "std": 0.013,
+        "ci95": [
+          -0.0151,
+          0.0176
+        ],
+        "n": 5
+      },
+      "tail_delta": {
+        "mean": -0.016,
+        "std": 0.025,
+        "ci95": [
+          -0.0474,
+          0.0145
+        ],
+        "n": 5
+      }
+    },
+    "full_minus_hard_match": {
+      "macro_delta": {
+        "mean": 0.001,
+        "std": 0.005,
+        "ci95": [
+          -0.005,
+          0.0074
+        ],
+        "n": 5
+      },
+      "tail_delta": {
+        "mean": 0.006,
+        "std": 0.015,
+        "ci95": [
+          -0.0121,
+          0.0244
+        ],
+        "n": 5
+      }
+    },
+    "full_minus_no_queue_l002": {
+      "macro_delta": {
+        "mean": -0.001,
+        "std": 0.01,
+        "ci95": [
+          -0.0127,
+          0.011
+        ],
+        "n": 5
+      },
+      "tail_delta": {
+        "mean": -0.003,
+        "std": 0.02,
+        "ci95": [
+          -0.0281,
+          0.0227
+        ],
+        "n": 5
+      }
+    },
+    "full_minus_hard_match_l002": {
+      "macro_delta": {
+        "mean": -0.001,
+        "std": 0.004,
+        "ci95": [
+          -0.0064,
+          0.0047
+        ],
+        "n": 5
+      },
+      "tail_delta": {
+        "mean": 0.001,
+        "std": 0.013,
+        "ci95": [
+          -0.0146,
+          0.0175
+        ],
+        "n": 5
+      }
+    },
+    "full_minus_no_queue_l005": {
+      "macro_delta": {
+        "mean": -0.003,
+        "std": 0.004,
+        "ci95": [
+          -0.0075,
+          0.0023
+        ],
+        "n": 5
+      },
+      "tail_delta": {
+        "mean": -0.011,
+        "std": 0.018,
+        "ci95": [
+          -0.0332,
+          0.0115
+        ],
+        "n": 5
+      }
+    },
+    "full_minus_focal": {
+      "macro_delta": {
+        "mean": 0.006,
+        "std": 0.007,
+        "ci95": [
+          -0.0023,
+          0.0149
+        ],
+        "n": 5
+      },
+      "tail_delta": {
+        "mean": 0.008,
+        "std": 0.02,
+        "ci95": [
+          -0.0166,
+          0.0321
+        ],
+        "n": 5
+      }
+    },
+    "full_minus_bce": {
+      "macro_delta": {
+        "mean": 0.015,
+        "std": 0.01,
+        "ci95": [
+          0.0031,
+          0.0275
+        ],
+        "n": 5
+      },
+      "tail_delta": {
+        "mean": 0.071,
+        "std": 0.026,
+        "ci95": [
+          0.0391,
+          0.1027
+        ],
+        "n": 5
+      }
+    },
+    "bce_minus_hard_supcon": {
+      "macro_delta": {
+        "mean": 0.064,
+        "std": 0.008,
+        "ci95": [
+          0.0535,
+          0.0743
+        ],
+        "n": 5
+      },
+      "tail_delta": {
+        "mean": 0.132,
+        "std": 0.019,
+        "ci95": [
+          0.1087,
+          0.1552
+        ],
+        "n": 5
+      }
+    },
+    "semeval_clfer_minus_focal": {
+      "macro_delta": {
+        "mean": -0.002,
+        "std": 0.003,
+        "ci95": [
+          -0.0066,
+          0.0017
+        ],
+        "n": 5
+      },
+      "tail_delta": {
+        "mean": -0.009,
+        "std": 0.006,
+        "ci95": [
+          -0.0163,
+          -0.0014
+        ],
+        "n": 5
+      }
+    },
+    "semeval_clfer_minus_bce": {
+      "macro_delta": {
+        "mean": 0.006,
+        "std": 0.006,
+        "ci95": [
+          -0.001,
+          0.0131
+        ],
+        "n": 5
+      },
+      "tail_delta": {
+        "mean": 0.021,
+        "std": 0.01,
+        "ci95": [
+          0.0082,
+          0.034
+        ],
+        "n": 5
+      }
+    }
+  },
+  "paper_table_values": {
+    "roberta_bce_macro_f1": {
+      "mean": 0.501,
+      "std": 0.004,
+      "ci95": [
+        0.4958,
+        0.5053
+      ],
+      "n": 5
+    },
+    "roberta_cb_focal_macro_f1": {
+      "mean": 0.51,
+      "std": 0.007,
+      "ci95": [
+        0.5015,
+        0.5177
+      ],
+      "n": 5
+    },
+    "cb_focal_minus_bce_macro_mean": 0.009,
+    "hard_supcon_macro_f1": {
+      "mean": 0.437,
+      "std": 0.009,
+      "ci95": [
+        0.4258,
+        0.4476
+      ],
+      "n": 5
+    },
+    "clfer_lt_l010_macro_f1": {
+      "mean": 0.516,
+      "std": 0.008,
+      "ci95": [
+        0.5054,
+        0.5263
+      ],
+      "n": 5
+    }
+  },
+  "ijcs_revision": {
+    "source": "outputs/analysis/ijcs_revision_stats.json",
+    "queue_tail_slope_per_ln_lambda": {
+      "RoBERTa_GoEmotions_seeds42-51": {
+        "mean": 0.0147,
+        "ci95": [
+          0.0105,
+          0.0189
+        ],
+        "p": 3e-05,
+        "n": 10
+      },
+      "RoBERTa_SemEval_seeds42-51": {
+        "mean": 0.0019,
+        "ci95": [
+          -0.0014,
+          0.0052
+        ],
+        "p": 0.22711,
+        "n": 10
+      },
+      "BERT_GoEmotions_seeds42-46": {
+        "mean": 0.0153,
+        "ci95": [
+          0.009,
+          0.0215
+        ],
+        "p": 0.00253,
+        "n": 5
+      },
+      "BERT_SemEval_seeds42-46": {
+        "mean": 0.01,
+        "ci95": [
+          0.0063,
+          0.0137
+        ],
+        "p": 0.00175,
+        "n": 5
+      }
+    },
+    "queue_size_slope": {
+      "GoEmotions": {
+        "mean": 0.01,
+        "ci95": [
+          0.002,
+          0.018
+        ],
+        "p": 0.02547,
+        "n": 5
+      },
+      "SemEval": {
+        "mean": 0.0029,
+        "ci95": [
+          -0.0007,
+          0.0065
+        ],
+        "p": 0.09045,
+        "n": 5
+      }
+    },
+    "compensation_recovery_on_damage": {
+      "pooled_shared_seeds": {
+        "slope": 0.504,
+        "r": 0.959,
+        "p": 2.81e-11,
+        "slope_se": 0.035,
+        "n_cells": 20
+      },
+      "pooled_disjoint_seeds": {
+        "slope": 0.552,
+        "r": 0.902,
+        "p": 5.49e-08,
+        "slope_se": 0.062,
+        "n_cells": 20
+      },
+      "RoBERTa_shared_seeds": {
+        "slope": 0.491,
+        "r": 0.932,
+        "p": 8.41e-05
+      },
+      "BERT_shared_seeds": {
+        "slope": 0.512,
+        "r": 0.99,
+        "p": 4.73e-08,
+        "slope_se": 0.026,
+        "n_cells": 10
+      }
+    }
+  }
+}

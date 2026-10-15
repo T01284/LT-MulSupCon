@@ -1,0 +1,64 @@
+# LaTeX build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+paper/*.toc
+paper/main.pdf
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+.cursor/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+wandb/
+
+# Dataset (download via scripts/download_data.py)
+data/goemotions/
+
+# Training checkpoints — keep JSON metrics only
+outputs/checkpoints/
+outputs/**/*.pt
+outputs/**/*.pth
+outputs/predictions_semeval/*.npy
+# outputs/predictions/*.npz and predictions_semeval/*.npz stay tracked
+# (Appendix A / bootstrap dumps promised with the code)
+
+# Cloud rerun noise (keep JSON summaries, not raw logs)
+outputs/launch_all.log
+outputs/rerun_logs/
+outputs/rerun_*.log
+outputs/rerun_state.json
+outputs/rtx6000_rerun/
+models/hf_cache/
+
+# Archives
+paper.zip
+*.zip
+
+# Secrets
+.env
+credentials.json
+
+# GitHub release helpers (public repo only; not part of NAS archive)
+scripts/_push_github_root.py
+scripts/_rewrite_commit.py
+_commit_msg.txt
+_rewrite_commit.bat
+_new_commit.txt
+outputs/gpu_poll/

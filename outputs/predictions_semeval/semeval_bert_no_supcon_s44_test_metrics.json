@@ -1,0 +1,29 @@
+{
+  "test_metrics": {
+    "micro_f1": 0.6993093072556931,
+    "macro_f1": 0.5494153819216732,
+    "micro_precision": 0.7570328694107196,
+    "micro_recall": 0.6497649002414538,
+    "macro_precision": 0.6449195026908738,
+    "macro_recall": 0.5066913861942833,
+    "mAP": 0.6204111253003437,
+    "head": 0.7873070488477154,
+    "medium": 0.7238925729988018,
+    "tail": 0.30199406711977084
+  },
+  "per_class_f1": {
+    "anger": 0.7811038353601497,
+    "anticipation": 0.2164048865619546,
+    "disgust": 0.7404333794375288,
+    "fear": 0.7362514029180696,
+    "joy": 0.8403839317454674,
+    "love": 0.6065057712486883,
+    "optimism": 0.7311546840958606,
+    "pessimism": 0.33691756272401435,
+    "sadness": 0.7042716319824753,
+    "surprise": 0.2719298245614035,
+    "trust": 0.0782122905027933
+  },
+  "checkpoint": "outputs/checkpoints_semeval/semeval_bert_no_supcon_s44/best_model.pt",
+  "split": "test"
+}

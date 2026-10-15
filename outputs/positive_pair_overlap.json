@@ -1,0 +1,15 @@
+{
+  "train_samples": 43410,
+  "multilabel_ratio": 0.16360285648468095,
+  "simulated_batches": 5000,
+  "batch_size": 32,
+  "directed_positive_pairs_per_batch_mean": {
+    "jaccard": 146.4016,
+    "exact_match": 103.8112,
+    "partial_only": 42.5904
+  },
+  "among_jaccard_positive_pairs": {
+    "exact_match_fraction": 0.7090851466104195,
+    "partial_only_fraction": 0.29091485338958045
+  }
+}

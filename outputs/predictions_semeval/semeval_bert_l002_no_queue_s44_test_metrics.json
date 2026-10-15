@@ -1,0 +1,29 @@
+{
+  "test_metrics": {
+    "micro_f1": 0.6991235278006026,
+    "macro_f1": 0.5504752262478759,
+    "micro_precision": 0.7579806978470676,
+    "micro_recall": 0.6487482526369297,
+    "macro_precision": 0.6499256043719357,
+    "macro_recall": 0.5066009287792693,
+    "mAP": 0.6218840024925283,
+    "head": 0.7884701669163556,
+    "medium": 0.7217342951761839,
+    "tail": 0.3049228204898034
+  },
+  "per_class_f1": {
+    "anger": 0.7852474323062558,
+    "anticipation": 0.215929203539823,
+    "disgust": 0.7423059255856683,
+    "fear": 0.735195530726257,
+    "joy": 0.8378571428571429,
+    "love": 0.5951115834218916,
+    "optimism": 0.729952319029042,
+    "pessimism": 0.3418181818181818,
+    "sadness": 0.7000550357732526,
+    "surprise": 0.29310344827586204,
+    "trust": 0.07865168539325842
+  },
+  "checkpoint": "outputs/checkpoints_semeval/semeval_bert_l002_no_queue_s44/best_model.pt",
+  "split": "test"
+}

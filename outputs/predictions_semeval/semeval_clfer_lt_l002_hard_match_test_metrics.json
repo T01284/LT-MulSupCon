@@ -1,0 +1,29 @@
+{
+  "test_metrics": {
+    "micro_f1": 0.7115928369462771,
+    "macro_f1": 0.5637610460569765,
+    "micro_precision": 0.7566213314244811,
+    "micro_recall": 0.6716228237387216,
+    "macro_precision": 0.6421526807732584,
+    "macro_recall": 0.5297142584613276,
+    "mAP": 0.6326812343701307,
+    "head": 0.7937716613762283,
+    "medium": 0.7411682436259767,
+    "tail": 0.31931035832402566
+  },
+  "per_class_f1": {
+    "anger": 0.7754137115839244,
+    "anticipation": 0.22797927461139897,
+    "disgust": 0.755883710198431,
+    "fear": 0.7460148777895855,
+    "joy": 0.8500175623463295,
+    "love": 0.6403940886699507,
+    "optimism": 0.7566889632107023,
+    "pessimism": 0.3432574430823117,
+    "sadness": 0.7208008898776418,
+    "surprise": 0.2572614107883817,
+    "trust": 0.1276595744680851
+  },
+  "checkpoint": "outputs/checkpoints_semeval/semeval_clfer_lt_l002_hard_match/best_model.pt",
+  "split": "test"
+}

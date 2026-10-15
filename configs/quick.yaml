@@ -1,0 +1,42 @@
+# Quick experiment config (CPU-friendly, DistilRoBERTa)
+project_name: CLFER-LT-Quick
+seed: 42
+
+data:
+  data_dir: data/goemotions
+  max_length: 64
+  num_labels: 28
+  max_train_samples: 8000
+  max_eval_samples: 1500
+
+model:
+  backbone: distilroberta-base
+  hidden_dropout: 0.1
+  projection_dim: 128
+  use_memory_queue: true
+  queue_size: 2048
+  momentum: 0.999
+
+loss:
+  lambda_supcon: 0.5
+  lambda_proto: 0.3
+  temperature: 0.07
+  proto_temperature: 0.1
+  focal_gamma: 2.0
+  cb_beta: 0.9999
+
+training:
+  batch_size: 16
+  epochs: 2
+  learning_rate: 3.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  gradient_accumulation_steps: 2
+  fp16: false
+  save_dir: outputs/checkpoints
+  log_dir: outputs/logs
+  eval_steps: 200
+  save_steps: 200
+
+evaluation:
+  threshold: 0.5

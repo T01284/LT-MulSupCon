@@ -1,0 +1,70 @@
+{
+  "label_counts": {
+    "neutral": 14219,
+    "anger": 1567,
+    "fear": 596,
+    "annoyance": 2470,
+    "surprise": 1060,
+    "gratitude": 2662,
+    "desire": 641,
+    "optimism": 1581,
+    "admiration": 4130,
+    "confusion": 1368,
+    "amusement": 2328,
+    "approval": 2939,
+    "caring": 1087,
+    "embarrassment": 303,
+    "realization": 1110,
+    "disappointment": 1269,
+    "grief": 77,
+    "sadness": 1326,
+    "curiosity": 2191,
+    "joy": 1452,
+    "love": 2086,
+    "excitement": 853,
+    "disapproval": 2022,
+    "remorse": 545,
+    "disgust": 793,
+    "relief": 153,
+    "pride": 111,
+    "nervousness": 164
+  },
+  "groups": {
+    "head": [
+      "neutral",
+      "admiration",
+      "approval",
+      "gratitude",
+      "annoyance",
+      "amusement",
+      "curiosity",
+      "love",
+      "disapproval"
+    ],
+    "medium": [
+      "optimism",
+      "anger",
+      "joy",
+      "confusion",
+      "sadness",
+      "disappointment",
+      "realization",
+      "caring",
+      "surprise"
+    ],
+    "tail": [
+      "excitement",
+      "disgust",
+      "desire",
+      "fear",
+      "remorse",
+      "embarrassment",
+      "nervousness",
+      "relief",
+      "pride",
+      "grief"
+    ]
+  },
+  "total_samples": 43410,
+  "multilabel_ratio": 0.16360285648468095
+}

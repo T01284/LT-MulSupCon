@@ -1,0 +1,13 @@
+{
+  "mean_diff": 0.0009034998065958253,
+  "ci_low": -0.02725995771539738,
+  "ci_high": 0.03271810561530393,
+  "p_value_two_sided": 0.99,
+  "point_macro_a": 0.5077867463144089,
+  "point_macro_b": 0.5094268276540568,
+  "point_diff": 0.0016400813396478808,
+  "model_a": "outputs/predictions/baseline_focal_test.npz",
+  "model_b": "outputs/predictions/clfer_lt_l010_test.npz",
+  "method_a": "baseline_focal",
+  "method_b": "clfer_lt_l010"
+}

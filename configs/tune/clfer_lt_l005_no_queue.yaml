@@ -1,0 +1,44 @@
+# Ablation w/o memory queue at lambda=0.05 (dev-tied weight; queue robustness check)
+project_name: CLFER-LT-Abl-l005-no-queue
+seed: 42
+
+data:
+  data_dir: data/goemotions
+  max_length: 64
+  num_labels: 28
+  include_neutral: true
+
+model:
+  backbone: roberta-base
+  cache_dir: models/hf_cache
+  local_files_only: false
+  hidden_dropout: 0.1
+  projection_dim: 256
+  use_memory_queue: true
+  queue_size: 4096
+  momentum: 0.999
+
+loss:
+  lambda_supcon: 0.05
+  lambda_proto: 0.3
+  temperature: 0.07
+  proto_temperature: 0.1
+  focal_gamma: 2.0
+  cb_beta: 0.9999
+
+training:
+  experiment_name: clfer_lt_l005_no_queue
+  device: auto
+  batch_size: 32
+  epochs: 5
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  gradient_accumulation_steps: 1
+  num_workers: 4
+  fp16: false
+  save_dir: outputs/checkpoints
+  log_dir: outputs/logs
+
+evaluation:
+  threshold: 0.5

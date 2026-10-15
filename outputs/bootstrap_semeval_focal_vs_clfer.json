@@ -1,0 +1,10 @@
+{
+  "mean_diff": -0.0010884397392826929,
+  "ci_low": -0.01012236858469665,
+  "ci_high": 0.008136196904481828,
+  "p_value_two_sided": 0.826,
+  "model_a": "outputs/predictions_semeval/semeval_baseline_focal_test.npz",
+  "model_b": "outputs/predictions_semeval/semeval_clfer_lt_test.npz",
+  "point_macro_a": 0.5666989498768704,
+  "point_macro_b": 0.5678022933425148
+}

@@ -1,0 +1,29 @@
+{
+  "test_metrics": {
+    "micro_f1": 0.7104294478527607,
+    "macro_f1": 0.5569015429820063,
+    "micro_precision": 0.7662108513453904,
+    "micro_recall": 0.6622188333968738,
+    "macro_precision": 0.6863388326304913,
+    "macro_recall": 0.5159453992201483,
+    "mAP": 0.6344930171121029,
+    "head": 0.7937107260637727,
+    "medium": 0.7372500620954089,
+    "tail": 0.3066069216649051
+  },
+  "per_class_f1": {
+    "anger": 0.7818696883852692,
+    "anticipation": 0.22540250447227192,
+    "disgust": 0.7525676937441643,
+    "fear": 0.750816104461371,
+    "joy": 0.8466947960618847,
+    "love": 0.6300211416490487,
+    "optimism": 0.7525083612040134,
+    "pessimism": 0.3279279279279279,
+    "sadness": 0.7084257206208425,
+    "surprise": 0.2643171806167401,
+    "trust": 0.08536585365853659
+  },
+  "checkpoint": "outputs/checkpoints_semeval/semeval_b16_l050_no_queue/best_model.pt",
+  "split": "test"
+}
