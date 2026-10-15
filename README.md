@@ -1,43 +1,43 @@
 # LT-MulSupCon
 
-多标签长尾对比学习栈 CLFER-LT 的组件分解。实验在 GoEmotions 与 SemEval-2018 Task 1 E-c 的官方划分上完成，编码器为 RoBERTa-base 与 BERT-base。本仓库提供训练与评估代码、配置、逐次运行的 `results.json`，以及论文用到的汇总结果。
+Component breakdown of CLFER-LT, a contrastive stack for long-tailed multi-label emotion recognition. Experiments use the official splits of GoEmotions and SemEval-2018 Task 1 E-c, with RoBERTa-base and BERT-base as encoders. This repository provides the training and evaluation code, the configurations, a `results.json` for each run, and the aggregated results used in the paper.
 
-测试集预测（`y_true` / `y_pred` / `y_prob` / `labels`）在 `outputs/predictions/` 与 `outputs/predictions_semeval/`。权重文件 `best_model.pt` 不在本包内。
+Test-set predictions (`y_true`, `y_pred`, `y_prob`, and `labels`) are in `outputs/predictions/` and `outputs/predictions_semeval/`. The weight file `best_model.pt` is not included.
 
-## 目录
+## Layout
 
 ```
-├── configs/                  # 训练配置（主实验、λ₁ 扫描、第二数据集、第二编码器）
-├── data/                     # GoEmotions 与 SemEval-2018 官方划分
-├── src/                      # 数据、模型、损失、训练
-├── scripts/                  # 训练、评估、作图、重叠统计、打包
+├── configs/                  # Training configs (main runs, the λ₁ sweep, the second dataset, and the second encoder)
+├── data/                     # Official GoEmotions and SemEval-2018 splits
+├── src/                      # Data, model, loss, and training
+├── scripts/                  # Training, evaluation, plotting, overlap statistics, and packaging
 └── outputs/
-    ├── key_results.json      # 正文表格所用的五种子汇总
+    ├── key_results.json      # Five-seed aggregates used in the paper tables
     ├── experiment_summary.json
     ├── paper_table_fragments.json
     ├── predictions_manifest.json
-    ├── analysis/             # 队列补偿、剂量与显著性汇总
-    ├── figures/              # 正文与补充材料中的图
-    ├── checkpoints/          # GoEmotions：每次运行一个 results.json
-    ├── checkpoints_semeval/  # SemEval：每次运行一个 results.json
-    ├── predictions/          # GoEmotions 测试集预测
-    └── predictions_semeval/  # SemEval 测试集预测
+    ├── analysis/             # Queue-compensation, dose, and significance summaries
+    ├── figures/              # Figures in the manuscript and the supplement
+    ├── checkpoints/          # GoEmotions: one results.json per run
+    ├── checkpoints_semeval/  # SemEval: one results.json per run
+    ├── predictions/          # GoEmotions test-set predictions
+    └── predictions_semeval/  # SemEval test-set predictions
 ```
 
-## 环境
+## Setup
 
 ```bash
 pip install -r requirements.txt
 ```
 
-GoEmotions 与 SemEval-2018 的划分已在 `data/`。若需重新下载：
+The GoEmotions and SemEval-2018 splits are already in `data/`. To download them again:
 
 ```bash
 python scripts/download_data.py
 python scripts/download_semeval2018.py
 ```
 
-## 训练与评估
+## Training and evaluation
 
 ```bash
 python scripts/train.py --config configs/default.yaml --model_type baseline --epochs 5
@@ -46,19 +46,19 @@ python scripts/eval_checkpoint.py --help
 python scripts/export_predictions.py --help
 ```
 
-Jaccard 正样本重叠统计：
+Jaccard positive-pair overlap:
 
 ```bash
 python scripts/positive_pair_overlap_stats.py
 ```
 
-## 结果文件
+## Result files
 
-正文数字以 `outputs/key_results.json` 为准。每次运行的测试分数在 `outputs/checkpoints/<run>/results.json` 与 `outputs/checkpoints_semeval/<run>/results.json`。队列补偿与剂量分析的汇总在 `outputs/analysis/`。
+Numbers in the paper are taken from `outputs/key_results.json`. Per-run test scores are in `outputs/checkpoints/<run>/results.json` and `outputs/checkpoints_semeval/<run>/results.json`. Summaries of the queue-compensation and dose analyses are in `outputs/analysis/`.
 
-## 测试集预测
+## Test-set predictions
 
-`outputs/predictions/` 与 `outputs/predictions_semeval/` 各含一次测试运行的 npz。逐文件大小与 SHA-256 见 `outputs/predictions_manifest.json`。只重新打包预测文件时：
+`outputs/predictions/` and `outputs/predictions_semeval/` each contain one npz file per test run. File sizes and SHA-256 hashes are listed in `outputs/predictions_manifest.json`. To repack only the prediction files:
 
 ```bash
 python scripts/pack_predictions.py
